@@ -6,86 +6,125 @@
   <title>Dynamic Resume Builder</title>
 </head>
 <body>
-  <h1>Dynamic Resume Builder</h1>
-  <h2>Fill in your details to create your resume</h2>
-  
-  <form id="resumeForm">
-    <!-- Personal Information -->
-    <fieldset>
-      <legend>Personal Information</legend>
-      <label for="fullName">Full Name:</label>
-      <input type="text" id="fullName" placeholder="Enter your full name" required>
+  <header>
+    <h1>Dynamic Resume Builder</h1>
+  </header>
 
-      <label for="contact">Contact Info:</label>
-      <input type="text" id="contact" placeholder="Email or phone number" required>
+  <div class="form-container">
+    <h2>Fill in your details to create your resume</h2>
+    <form id="resumeForm">
+      <!-- Personal Information -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" placeholder="Enter your full name">
 
-      <label for="location">Location:</label>
-      <input type="text" id="location" placeholder="Your city, country" required>
-    </fieldset>
+        <label for="contact">Contact Info:</label>
+        <input type="text" id="contact" placeholder="Email or phone number">
 
-    <!-- Work Experience -->
-    <fieldset>
-      <legend>Work Experience</legend>
-      <label for="jobTitle">Job Title:</label>
-      <input type="text" id="jobTitle" placeholder="Your job title" required>
+        <label for="location">Location:</label>
+        <input type="text" id="location" placeholder="Your city, country">
+      </fieldset>
 
-      <label for="companyName">Company Name:</label>
-      <input type="text" id="companyName" placeholder="Company you worked for" required>
+      <!-- Work Experience -->
+      <fieldset>
+        <legend>Work Experience</legend>
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobTitle" placeholder="Your job title">
 
-      <label for="workDescription">Job Description:</label>
-      <textarea id="workDescription" placeholder="Describe your job responsibilities" required></textarea>
-    </fieldset>
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" placeholder="Company you worked for">
 
-    <!-- Education -->
-    <fieldset>
-      <legend>Education</legend>
-      <label for="degree">Degree/Certification:</label>
-      <input type="text" id="degree" placeholder="Your degree or certification" required>
+        <label for="workDescription">Job Description:</label>
+        <textarea id="workDescription" placeholder="Describe your job responsibilities"></textarea>
+      </fieldset>
 
-      <label for="university">University/Institution:</label>
-      <input type="text" id="university" placeholder="Name of your university or institution" required>
+      <!-- Education -->
+      <fieldset>
+        <legend>Education</legend>
+        <label for="degree">Degree/Certification:</label>
+        <input type="text" id="degree" placeholder="Your degree or certification">
 
-      <label for="eduDuration">Duration:</label>
-      <input type="text" id="eduDuration" placeholder="Start and end date" required>
+        <label for="university">University/Institution:</label>
+        <input type="text" id="university" placeholder="Name of your university or institution">
 
-      <label for="educationDescription">Description:</label>
-      <textarea id="educationDescription" placeholder="Additional details about your education" required></textarea>
-    </fieldset>
+        <label for="eduDuration">Duration:</label>
+        <input type="text" id="eduDuration" placeholder="Start and end date">
 
-    <!-- Projects (Optional) -->
-    <fieldset>
-      <legend>Projects (Optional)</legend>
-      <label for="projectTitle">Project Title:</label>
-      <input type="text" id="projectTitle" placeholder="Name of the project (Optional)">
+        <label for="educationDescription">Description:</label>
+        <textarea id="educationDescription" placeholder="Additional details about your education"></textarea>
+      </fieldset>
 
-      <label for="projectDescription">Project Description:</label>
-      <textarea id="projectDescription" placeholder="Brief description of the project (Optional)"></textarea>
+      <!-- Projects (Optional) -->
+      <fieldset>
+        <legend>Projects (Optional)</legend>
+        <label for="projectTitle">Project Title:</label>
+        <input type="text" id="projectTitle" placeholder="Name of the project (Optional)">
 
-      <label for="projectLink">Project Link (if any):</label>
-      <input type="url" id="projectLink" placeholder="Link to the project or GitHub repository (Optional)">
-    </fieldset>
+        <label for="projectDescription">Project Description:</label>
+        <textarea id="projectDescription" placeholder="Brief description of the project (Optional)"></textarea>
 
-    <!-- Certifications (Optional) -->
-    <fieldset>
-      <legend>Certifications (Optional)</legend>
-      <label for="certificationTitle">Certification Title:</label>
-      <input type="text" id="certificationTitle" placeholder="Name of certification (Optional)">
+        <label for="projectLink">Project Link (if any):</label>
+        <input type="url" id="projectLink" placeholder="Link to the project or GitHub repository (Optional)">
+      </fieldset>
 
-      <label for="certificationIssuer">Certification Issuer:</label>
-      <input type="text" id="certificationIssuer" placeholder="Name of the issuer (Optional)">
+      <!-- Certifications (Optional) -->
+      <fieldset>
+        <legend>Certifications (Optional)</legend>
+        <label for="certificationTitle">Certification Title:</label>
+        <input type="text" id="certificationTitle" placeholder="Name of certification (Optional)">
 
-      <label for="certificationDate">Date Acquired:</label>
-      <input type="text" id="certificationDate" placeholder="When you received the certification (Optional)">
-    </fieldset>
+        <label for="certificationIssuer">Certification Issuer:</label>
+        <input type="text" id="certificationIssuer" placeholder="Name of the issuer (Optional)">
 
-    <!-- Skills -->
-    <fieldset>
-      <legend>Skills</legend>
-      <label for="skills">Skills (comma separated):</label>
-      <input type="text" id="skills" placeholder="e.g. JavaScript, Python, HTML" required>
-    </fieldset>
+        <label for="certificationDate">Date Acquired:</label>
+        <input type="text" id="certificationDate" placeholder="When you received the certification (Optional)">
+      </fieldset>
 
-    <button type="submit">Generate Resume</button>
-  </form>
+      <!-- Skills -->
+      <fieldset>
+        <legend>Skills</legend>
+        <label for="skills">Skills (comma separated):</label>
+        <input type="text" id="skills" placeholder="e.g. JavaScript, Python, HTML">
+      </fieldset>
+
+      <!-- Button to generate resume -->
+      <button type="submit">Generate Resume</button>
+    </form>
+  </div>
+
+  <!-- Resume Preview -->
+  <div class="resume-container">
+    <h2>Resume Preview</h2>
+    <div id="resumePreview">
+      <p><strong>Name:</strong> <span id="resumeName"></span></p>
+      <p><strong>Contact Info:</strong> <span id="resumeContact"></span></p>
+      <p><strong>Location:</strong> <span id="resumeLocation"></span></p>
+
+      <h3>Work Experience</h3>
+      <p><strong>Job Title:</strong> <span id="resumeJobTitle"></span></p>
+      <p><strong>Company:</strong> <span id="resumeCompanyName"></span></p>
+      <p><strong>Job Description:</strong> <span id="resumeWorkDescription"></span></p>
+
+      <h3>Education</h3>
+      <p><strong>Degree/Certification:</strong> <span id="resumeDegree"></span></p>
+      <p><strong>Institution:</strong> <span id="resumeUniversity"></span></p>
+      <p><strong>Duration:</strong> <span id="resumeEduDuration"></span></p>
+      <p><strong>Description:</strong> <span id="resumeEducationDescription"></span></p>
+
+      <h3>Projects (if provided)</h3>
+      <p><strong>Project Title:</strong> <span id="resumeProjectTitle"></span></p>
+      <p><strong>Description:</strong> <span id="resumeProjectDescription"></span></p>
+      <p><strong>Link:</strong> <span id="resumeProjectLink"></span></p>
+
+      <h3>Certifications (if provided)</h3>
+      <p><strong>Certification:</strong> <span id="resumeCertificationTitle"></span></p>
+      <p><strong>Issuer:</strong> <span id="resumeCertificationIssuer"></span></p>
+      <p><strong>Date:</strong> <span id="resumeCertificationDate"></span></p>
+
+      <h3>Skills</h3>
+      <p><span id="resumeSkills"></span></p>
+    </div>
+  </div>
 </body>
 </html>
