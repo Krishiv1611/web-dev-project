@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Resume Builder</title>
+</head>
+<body>
+  <h1>Dynamic Resume Builder</h1>
+  <h2>Fill in your details to create your resume</h2>
+  
+  <form id="resumeForm">
+    <!-- Personal Information -->
+    <fieldset>
+      <legend>Personal Information</legend>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" placeholder="Enter your full name" required>
+
+      <label for="contact">Contact Info:</label>
+      <input type="text" id="contact" placeholder="Email or phone number" required>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" placeholder="Your city, country" required>
+    </fieldset>
+
+    <!-- Work Experience -->
+    <fieldset>
+      <legend>Work Experience</legend>
+      <label for="jobTitle">Job Title:</label>
+      <input type="text" id="jobTitle" placeholder="Your job title" required>
+
+      <label for="companyName">Company Name:</label>
+      <input type="text" id="companyName" placeholder="Company you worked for" required>
+
+      <label for="workDescription">Job Description:</label>
+      <textarea id="workDescription" placeholder="Describe your job responsibilities" required></textarea>
+    </fieldset>
+
+    <!-- Education -->
+    <fieldset>
+      <legend>Education</legend>
+      <label for="degree">Degree/Certification:</label>
+      <input type="text" id="degree" placeholder="Your degree or certification" required>
+
+      <label for="university">University/Institution:</label>
+      <input type="text" id="university" placeholder="Name of your university or institution" required>
+
+      <label for="eduDuration">Duration:</label>
+      <input type="text" id="eduDuration" placeholder="Start and end date" required>
+
+      <label for="educationDescription">Description:</label>
+      <textarea id="educationDescription" placeholder="Additional details about your education" required></textarea>
+    </fieldset>
+
+    <!-- Projects (Optional) -->
+    <fieldset>
+      <legend>Projects (Optional)</legend>
+      <label for="projectTitle">Project Title:</label>
+      <input type="text" id="projectTitle" placeholder="Name of the project (Optional)">
+
+      <label for="projectDescription">Project Description:</label>
+      <textarea id="projectDescription" placeholder="Brief description of the project (Optional)"></textarea>
+
+      <label for="projectLink">Project Link (if any):</label>
+      <input type="url" id="projectLink" placeholder="Link to the project or GitHub repository (Optional)">
+    </fieldset>
+
+    <!-- Certifications (Optional) -->
+    <fieldset>
+      <legend>Certifications (Optional)</legend>
+      <label for="certificationTitle">Certification Title:</label>
+      <input type="text" id="certificationTitle" placeholder="Name of certification (Optional)">
+
+      <label for="certificationIssuer">Certification Issuer:</label>
+      <input type="text" id="certificationIssuer" placeholder="Name of the issuer (Optional)">
+
+      <label for="certificationDate">Date Acquired:</label>
+      <input type="text" id="certificationDate" placeholder="When you received the certification (Optional)">
+    </fieldset>
+
+    <!-- Skills -->
+    <fieldset>
+      <legend>Skills</legend>
+      <label for="skills">Skills (comma separated):</label>
+      <input type="text" id="skills" placeholder="e.g. JavaScript, Python, HTML" required>
+    </fieldset>
+
+    <button type="submit">Generate Resume</button>
+  </form>
+</body>
+</html>
