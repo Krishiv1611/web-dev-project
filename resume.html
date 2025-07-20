@@ -1,76 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Resume</title>
+  <meta charset="UTF-8">
+  <title>Resume</title>
 </head>
 <body>
+  <h1 id="rFullName"></h1>
+  <p id="rContact"></p>
 
-    <header>
-        <h1>[Full Name]</h1>
-        <p>Email: [Your Email] | Phone: [Your Phone] | Location: [Your Location]</p>
-    </header>
+  <h2>Work Experience</h2>
+  <p><strong id="rJobTitle"></strong> at <span id="rCompanyName"></span></p>
+  <p id="rWorkDescription"></p>
 
-    <hr>
+  <h2>Education</h2>
+  <p><strong id="rDegree"></strong> from <span id="rUniversity"></span></p>
+  <p id="rEducationDescription"></p>
 
-    <main>
-        <section>
-            <h2>Work Experience</h2>
-            
-            <article>
-                <h3>[Job Title]</h3>
-                <h4>[Company Name] | [Start Date] - [End Date]</h4>
-                <p>[Job Description: Describe your responsibilities, achievements, and the skills you used.]</p>
-            </article>
+  <h2>Projects</h2>
+  <p><strong id="rProjectTitle"></strong></p>
+  <p id="rProjectDescription"></p>
+  <a id="rProjectLink" href="#" target="_blank"></a>
 
-            <article>
-                <h3>[Another Job Title]</h3>
-                <h4>[Another Company Name] | [Start Date] - [End Date]</h4>
-                <p>[Job Description]</p>
-            </article>
-        </section>
+  <h2>Certifications</h2>
+  <p><strong id="rCertificationTitle"></strong></p>
+  <p id="rCertificationDetails"></p>
 
-        <section>
-            <h2>Education</h2>
+  <h2>Skills</h2>
+  <ul id="rSkills"></ul>
 
-            <article>
-                <h3>[Degree or Certification]</h3>
-                <h4>[University or Institution] | [Graduation Year or Duration]</h4>
-                <p>[Description: Any honors, relevant coursework, or extracurricular activities.]</p>
-            </article>
-        </section>
-        
-        <section>
-            <h2>Projects</h2>
-
-            <article>
-                <h3>[Project Title]</h3>
-                <p>[Project Description: What the project is, what you did, and the technologies used.]</p>
-                <p>Link: <a href="[Project Link]">View Project</a></p>
-            </article>
-        </section>
-
-        <section>
-            <h2>Certifications</h2>
-            
-            <article>
-                <h3>[Certification Title]</h3>
-                <p>Issued by: [Certification Issuer] on [Date Acquired]</p>
-            </article>
-        </section>
-
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>[Skill 1]</li>
-                <li>[Skill 2]</li>
-                <li>[Skill 3]</li>
-                <li>[Skill 4]</li>
-                <li>[Skill 5]</li>
-            </ul>
-        </section>
-    </main>
-
+  <script src="resume.js"></script>
 </body>
 </html>
+
+
+

@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('resumeForm');
   form.addEventListener('submit', function (e) {
@@ -22,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const certificationIssuer = document.getElementById('certificationIssuer').value;
     const certificationDate = document.getElementById('certificationDate').value;
     const skills = document.getElementById('skills').value;
+    const design = document.getElementById('resumeDesign').value;
 
     localStorage.setItem('resumeData', JSON.stringify({
       fullName,
@@ -40,8 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
       certificationTitle,
       certificationIssuer,
       certificationDate,
-      skills
+      skills,
+      design
     }));
+
     window.location.href = 'resume.html';
   });
 });
