@@ -1,34 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link id="designStylesheet" rel="stylesheet" href="designer.css" />
   <meta charset="UTF-8">
-  <title>Resume</title>
+  <title>Generated Resume</title>
+
+  <script>
+    const resumeData = JSON.parse(localStorage.getItem("resumeData"));
+    const stylesheet = document.getElementById("designStylesheet");
+    if (resumeData && resumeData.design) {
+      stylesheet.href = resumeData.design + ".css"; // load the selected CSS
+    }
+  </script>
+
 </head>
 <body>
-  <h1 id="rFullName"></h1>
-  <p id="rContact"></p>
+  <div class="container">
+      <div class="sidebar">
+          <section class="resume__section">
+          <p class="resume__contact" id="rContact"></p>
+          <h2>Skills</h2>
+          <ul id="rSkills" class="resume__skills"></ul>
+          </section>
+      </div>
 
-  <h2>Work Experience</h2>
-  <p><strong id="rJobTitle"></strong> at <span id="rCompanyName"></span></p>
-  <p id="rWorkDescription"></p>
+      <div class="resume">
+          <header class="resume__header">
+          <h1 id="rFullName" class="resume__name"></h1>
+          </header>
 
-  <h2>Education</h2>
-  <p><strong id="rDegree"></strong> from <span id="rUniversity"></span></p>
-  <p id="rEducationDescription"></p>
+          <section class="resume__section">
+            <h2>Professional Experience</h2>
+            <div class="experience">
+              <h3 id="rJobTitle" class="experience__title"></h3>
+              <p><strong>Company:</strong> <span id="rCompanyName"></span></p>
+              <p id="rWorkDescription" class="experience__description"></p>
+            </div>
+          </section>
 
-  <h2>Projects</h2>
-  <p><strong id="rProjectTitle"></strong></p>
-  <p id="rProjectDescription"></p>
-  <a id="rProjectLink" href="#" target="_blank"></a>
+          <section class="resume__section">
+            <h2>Education</h2>
+            <div class="education">
+              <p><strong>Degree:</strong> <span id="rDegree"></span></p>
+              <p><strong>University:</strong> <span id="rUniversity"></span></p>
+              <p id="rEducationDescription"></p>
+            </div>
+          </section>
 
-  <h2>Certifications</h2>
-  <p><strong id="rCertificationTitle"></strong></p>
-  <p id="rCertificationDetails"></p>
+          <section class="resume__section">
+            <h2>Projects</h2>
+            <div class="project">
+              <p><strong>Title:</strong> <span id="rProjectTitle"></span></p>
+              <p id="rProjectDescription"></p>
+              <p><strong>Link:</strong> <a id="rProjectLink" href="#" target="_blank"></a></p>
+            </div>
+          </section>
 
-  <h2>Skills</h2>
-  <ul id="rSkills"></ul>
-
-  <script src="resume.js"></script>
+          <section class="resume__section">
+            <h2>Certifications</h2>
+            <div class="certification">
+              <p><strong>Title:</strong> <span id="rCertificationTitle"></span></p>
+              <p id="rCertificationDetails"></p>
+            </div>
+          </section>
+      </div>
+  </div>
+<script src="resume.js"></script>
 </body>
 </html>
 
