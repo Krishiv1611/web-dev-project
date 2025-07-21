@@ -12,9 +12,27 @@
       stylesheet.href = resumeData.design + ".css"; // load the selected CSS
     }
   </script>
+  <style>
+    #downloadPDF {
+      margin: 20px;
+      padding: 12px 28px;
+      background: #0072ff;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-size: 1.05em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0,114,255,0.10);
+      cursor: pointer;
+    }
+  </style> 
 
 </head>
 <body>
+  <!-- Download as PDF Button -->
+  <button id="downloadPDF" style="margin:20px;">Download as PDF</button>
+
   <div class="container">
       <div class="sidebar">
           <section class="resume__section">
@@ -66,8 +84,19 @@
       </div>
   </div>
 <script src="resume.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+document.getElementById('downloadPDF').addEventListener('click', function () {
+  const element = document.querySelector('.container');
+  const opt = {
+    margin:       0,
+    filename:     'resume.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+  html2pdf().set(opt).from(element).save();
+});
+</script>
 </body>
 </html>
-
-
-
