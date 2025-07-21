@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #00003e;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  width: 300px;
+  background: linear-gradient(135deg, #3498db, #2981bc);
+  color: #fff;
+  padding: 30px 20px;
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #f1c40f;
+  border-bottom: 2px solid #f1c40f;
+  padding-bottom: 5px;
+}
+
+.resume__contact {
+  font-size: 15px;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+.resume__skills {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.resume__skills li {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.resume {
+  flex: 1;
+  padding: 40px 30px;
+}
+
+.resume__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.resume__name {
+  font-size: 36px;
+  color: #2c3e50;
+}
+
+.resume__section {
+  margin-bottom: 35px;
+}
+
+.resume__section h2 {
+  font-size: 20px;
+  color: #1e272e;
+  margin-bottom: 15px;
+  border-left: 5px solid #f39c12;
+  padding-left: 10px;
+}
+
+.experience, .education, .project, .certification {
+  background: #f9f9f9;
+  border-left: 4px solid #3498db;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.experience__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.experience__description,
+.education p,
+.certification p,
+.project p {
+  margin: 4px 0;
+  color: #555;
+}
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .resume {
+    padding: 20px;
+  }
+}
