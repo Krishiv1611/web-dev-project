@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<link rel="stylesheet" href="index.css">
- <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dynamic Resume Builder</title>
 </head>
-<body>
-  <header>
-    <h1>Dynamic Resume Builder</h1>
-  </header>
 
-  <div class="form-container">
+<body>
+  <div id="formContainer">
+    <header>
+      <h1>Dynamic Resume Builder</h1>
+    </header>
+
     <h2>Fill in your details to create your resume</h2>
 
     <label for="resumeDesign"><strong>Resume Design:</strong></label>
@@ -27,8 +29,11 @@
         <label for="fullName">Full Name:</label>
         <input type="text" id="fullName" />
 
-        <label for="contact">Contact Info:</label>
-        <input type="text" id="contact" />
+        <label for="email">Email:</label>
+        <input type="text" id="email" />
+
+        <label for="Phoneno">Contact number:</label>
+        <input type="text" id="phoneno" />
 
         <label for="location">Location:</label>
         <input type="text" id="location" />
@@ -62,39 +67,50 @@
       </fieldset>
 
       <fieldset>
-        <legend>Projects (Optional)</legend>
-        <label for="projectTitle">Project Title:</label>
-        <input type="text" id="projectTitle" />
+        <legend>Projects</legend>
+        <div class="project1">
+          <label for="projectTitle1">Project Title:</label>
+          <input type="text" id="projectTitle1" />
 
-        <label for="projectDescription">Project Description:</label>
-        <textarea id="projectDescription"></textarea>
+          <label for="projectDescription1">Project Description:</label>
+          <textarea id="projectDescription1"></textarea>
 
-        <label for="projectLink">Project Link:</label>
-        <input type="url" id="projectLink" />
+          <label for="projectLink1">Project Link:</label>
+          <input type="url" id="projectLink1" />
+        </div>
+        <button type="button" id="addproject">+ add</button>
       </fieldset>
 
       <fieldset>
-        <legend>Certifications (Optional)</legend>
-        <label for="certificationTitle">Certification Title:</label>
-        <input type="text" id="certificationTitle" />
+        <legend>Certifications</legend>
+        <div class="certificate1">
+          <label for="certificationTitle1">Certification Title:</label>
+          <input type="text" id="certificationTitle1" />
 
-        <label for="certificationIssuer">Certification Issuer:</label>
-        <input type="text" id="certificationIssuer" />
+          <label for="certificationIssuer1">Certification Issuer:</label>
+          <input type="text" id="certificationIssuer1" />
 
-        <label for="certificationDate">Date Acquired:</label>
-        <input type="text" id="certificationDate" />
+          <label for="certificationDate1">Date Acquired:</label>
+          <input type="text" id="certificationDate1" />
+        </div>
+        <button type="button" id="addcertificate">+ add</button>
       </fieldset>
 
       <fieldset>
         <legend>Skills</legend>
-        <label for="skills">Skills (comma separated):</label>
-        <input type="text" id="skills" />
+        <div class="skill1">
+          <label for="skills1">1) </label>
+          <input type="text" id="skillset1" />
+        </div>
+        <button type="button" id="addskill">+ add</button>
       </fieldset>
 
       <button type="submit">Generate Resume</button>
     </form>
   </div>
 
-  <script src="index.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
+
 </html>
