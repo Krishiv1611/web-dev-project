@@ -1,0 +1,108 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+  padding: 40px;
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sidebar {
+  background-color: #f3f3f3;
+  padding: 20px;
+  width: 30%;
+  border-right: 1px solid #ddd;
+}
+
+.resume__section {
+  margin-bottom: 20px;
+}
+
+.resume__contact {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.resume__skills {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume__skills li {
+  padding: 4px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.resume {
+  padding: 30px;
+  width: 70%;
+}
+
+.resume__header {
+  margin-bottom: 30px;
+}
+
+.resume__name {
+  font-size: 32px;
+  font-weight: 600;
+  color: #111;
+}
+
+.resume__section h2 {
+  font-size: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.experience,
+.education,
+.project,
+.certification {
+  margin-bottom: 20px;
+}
+
+.experience__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.experience__description,
+#rEducationDescription,
+#rProjectDescription,
+#rCertificationDetails {
+  font-size: 14px;
+  color: #555;
+  margin-top: 4px;
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
