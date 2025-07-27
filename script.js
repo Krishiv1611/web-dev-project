@@ -25,96 +25,21 @@ function resumegenerator(e) {
     let certificationDate = document.querySelector("#certificationDate1");
     let skill = document.querySelector(".skill1");
     let skillset = document.querySelector("#skillset1");
-    const resumeDesign = document.querySelector("#resumeDesign").value
+    const resumeDesign = document.querySelector("#resumeDesign");
 
 
     let resumeHTML = `
         <div id="resumeOutput">
-        <header>
-            <h1 class="fullname">${fullname.value || 'Your Name'}</h1>
-            <p>Email: ${email.value || 'Email: N/A'} | Phone: ${phoneno.value || 'Phone: N/A'} | Location: ${location.value || 'Location: N/A'}</p>
-        </header>
-        <hr>
-        <main>
-            <section>
-                <h2>Work Experience</h2>
-                <article>
-                    <h3>${jobTitle.value || 'Enter your Job Title'}</h3>
-                    <h4>${companyName.value || 'Enter your Company Name'}</h4>
-                    <p>${workDescription.value || 'Job Description: Describe your responsibilities, achievements, and the skills you used.'}</p>
-                </article>
-            </section>
-
-            <section>
-                <h2>Education</h2>
-                <article>
-                    <h3>${degree.value || 'Degree or Certification'}</h3>
-                    <h4>${university.value || 'University or Institution'} | ${eduDuration.value || 'Duration'}</h4>
-                    <p>${educationDescription.value || 'Description: Any honors, relevant coursework, or extracurricular activities.'}</p>
-                </article>
-            </section>
-    `;
-    resumeHTML += "<h2>Projects</h2>";
-    let countingproject = 1;
-    while (project) {
-        if (projectTitle.value) {
-            resumeHTML += `
-            <section>
-                <article>
-                    <h3>${projectTitle.value}</h3>
-                    <p>${projectDescription.value}</p>
-                    <p>Link: <a href="${projectLink.value || '#'}">View Project</a></p>
-                </article>
-            </section>
-        `;
-        }
-        else {
-            resumeHTML += `
-            <section>
-                <p>No Projects entered.</p>
-            </section>
-        `;
-        }
-        countingproject++;
-        project = document.querySelector(`.project${countingproject}`);
-        projectTitle = document.querySelector(`#projectTitle${countingproject}`);
-        projectDescription = document.querySelector(`#projectDescription${countingproject}`);
-        projectLink = document.querySelector(`#projectLink${countingproject}`);
-    }
-    resumeHTML += "<h2>Certifications</h2>";
-    let countingcertificate = 1;
-    while (certificate) {
-        if (certificationTitle.value) {
-            resumeHTML += `
-            <section>
-                <article>
-                    <h3>${certificationTitle.value}</h3>
-                    <p>Issued by: ${certificationIssuer.value} on ${certificationDate.value}</p>
-                </article>
-            </section>
-        `;
-        }
-        else {
-            resumeHTML += `
-            <section>
-                <p>No certifications entered.</p>
-            </section>
-        `;
-        }
-        countingcertificate++;
-        certificate = document.querySelector(`.certificate${countingcertificate}`);
-        certificationTitle = document.querySelector(`#certificationTitle${countingcertificate}`);
-        certificationIssuer = document.querySelector(`#certificationIssuer${countingcertificate}`);
-        certificationDate = document.querySelector(`#certificationDate${countingcertificate}`);
-    }
+        <div class="sidebar">
+          <section class="resume__section">
+                <p class="resume__contact">Email: ${email.value || 'Email: N/A'} | Phone: ${phoneno.value || 'Phone: N/A'} | Location: ${location.value || 'Location: N/A'}</p>
+                <h2>Skills</h2>
+                <ul id="rSkills" class="resume__skills">`
     let countingskill = 1;
-    resumeHTML += "<h2>Skills</h2>";
     while (skill) {
         if (skillset.value) {
             resumeHTML += `
-            <section>
-                    <div>${countingskill}) ${skillset.value}</div>
-            </section>
+                    <li>${skillset.value}</li>
         `;
         }
         else {
@@ -128,12 +53,95 @@ function resumegenerator(e) {
         skill = document.querySelector(`.skill${countingskill}`);
         skillset = document.querySelector(`#skillset${countingskill}`);
     }
-    resumeHTML += `</main></div>`;
+          resumeHTML+=`</ul>
+          </section>
+        </div>
+        <main class="resume">
+            <header class="resume__header">
+            <h1 class="resume__name">${fullname.value || 'Your Name'}</h1>
+            </header>
+            <section class="resume__section">
+                <h2>Work Experience</h2>
+                <div class="experience">
+                    <h3>${jobTitle.value || 'Enter your Job Title'}</h3>
+                    <h4>${companyName.value || 'Enter your Company Name'}</h4>
+                    <p>${workDescription.value || 'Job Description: Describe your responsibilities, achievements, and the skills you used.'}</p>
+                </div>
+            </section>
+
+            <section class="resume__section">
+                <h2>Education</h2>
+                <div class="education">
+                    <h3>${degree.value || 'Degree or Certification'}</h3>
+                    <h4>${university.value || 'University or Institution'} | ${eduDuration.value || 'Duration'}</h4>
+                    <p>${educationDescription.value || 'Description: Any honors, relevant coursework, or extracurricular activities.'}</p>
+                </div>
+            </section>
+    `;
+    resumeHTML+=`<section class="resume__section">
+                <h2>Projects</h2>`;
+    let countingproject = 1;
+    while (project) {
+        if (projectTitle.value) {
+            resumeHTML += `
+                <div class="project">
+                    <h3>${projectTitle.value}</h3>
+                    <p>${projectDescription.value}</p>
+                    <p>Link: <a href="${projectLink.value || '#'}">View Project</a></p>
+                </div>
+        `;
+        }
+        else {
+            resumeHTML += `
+            <section class="resume__section">
+                <p>No Projects entered.</p>
+            </section>
+        `;
+        }
+        countingproject++;
+        project = document.querySelector(`.project${countingproject}`);
+        projectTitle = document.querySelector(`#projectTitle${countingproject}`);
+        projectDescription = document.querySelector(`#projectDescription${countingproject}`);
+        projectLink = document.querySelector(`#projectLink${countingproject}`);
+    }
+    resumeHTML+=`</section>`;
+    resumeHTML+=`<section class="resume__section">
+                <h2>Certifications</h2>`;
+    let countingcertificate = 1;
+    while (certificate) {
+        if (certificationTitle.value) {
+            resumeHTML += `
+                <div class="certification">
+                    <h3>${certificationTitle.value}</h3>
+                    <p>Issued by: ${certificationIssuer.value} on ${certificationDate.value}</p>
+                </div>
+        `;
+        }
+        else {
+            resumeHTML += `
+            <section class="resume__section">
+                <p>No certifications entered.</p>
+            </section>
+        `;
+        }
+        countingcertificate++;
+        certificate = document.querySelector(`.certificate${countingcertificate}`);
+        certificationTitle = document.querySelector(`#certificationTitle${countingcertificate}`);
+        certificationIssuer = document.querySelector(`#certificationIssuer${countingcertificate}`);
+        certificationDate = document.querySelector(`#certificationDate${countingcertificate}`);
+    }
+    resumeHTML+=`</section>`;
     resumeHTML += `<button id="downloadBtn">Download as PDF</button>`;
+    resumeHTML += `</main></div>`;
     formContainer.innerHTML = '';
 
     formContainer.innerHTML = resumeHTML;
 
+    function changeCSS(fileName) {
+        const link = document.querySelector("#themeStylesheet");
+        link.href = fileName;
+    }
+    changeCSS(resumeDesign.value);
     const downloadBtn = document.querySelector("#downloadBtn");
     const resumeOutputElement = document.querySelector("#resumeOutput");
     downloadBtn.addEventListener("click", downloadPDF(resumeOutputElement));
@@ -190,31 +198,31 @@ function addingskill() {
 }
 addskill.addEventListener("click", addingskill);
 function downloadPDF(element) {
-            const downloadButton = document.querySelector("#downloadBtn");
+    const downloadButton = document.querySelector("#downloadBtn");
+    if (downloadButton) {
+        downloadButton.style.display = 'none';
+    }
+    const originalHeight = element.style.height;
+    element.style.height = element.scrollHeight + 'px';
+
+    const opt = {
+        margin: 0.5,
+        filename: 'resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+        html2canvas: {
+            scale: 2,
+            windowHeight: element.scrollHeight
+        },
+    };
+
+    setTimeout(() => {
+        html2pdf().set(opt).from(element).save().then(() => {
             if (downloadButton) {
-                downloadButton.style.display = 'none';
+                downloadButton.style.display = 'block';
             }
-            const originalHeight = element.style.height;
-            element.style.height = element.scrollHeight + 'px';
-
-            const opt = {
-                margin: 0.5,
-                filename: 'resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-                html2canvas: {
-                    scale: 2,
-                    windowHeight: element.scrollHeight
-                },
-            };
-
-            setTimeout(() => {
-                html2pdf().set(opt).from(element).save().then(() => {
-                    if (downloadButton) {
-                        downloadButton.style.display = 'block';
-                    }
-                    element.style.height = originalHeight;
-                });
-            }, 100);
-        }
+            element.style.height = originalHeight;
+        });
+    }, 100);
+}
 
