@@ -15,7 +15,7 @@ body {
   padding: 40px;
 }
 
-.container {
+#resumeOutput {
   display: flex;
   max-width: 1000px;
   margin: 0 auto;
